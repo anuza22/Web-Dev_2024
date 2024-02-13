@@ -42,7 +42,7 @@ ul {
 
 .main-nav ul {
     display: flex;
-}
+} 
 
 .main-nav ul li {
     padding: 0 10px;
@@ -254,7 +254,7 @@ ul {
     padding: 0 20px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-gap: 10px;
+    grid-gap: 1000px;
     align-items: flex-start;
     justify-content: center;
 }

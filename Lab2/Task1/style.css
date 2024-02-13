@@ -48,18 +48,19 @@ a {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgb(0 0 0 /25% ), 0 2px 8px rgb(0 0 0 /20% );
     box-sizing: border-box;
-    width: 400px;
+    width: 1000px;
     text-align: center;
     padding: 0px 0 28px;
     background-color: white;
 }
 
 #form {
-    flex-direction: column;
-    display: flex;
+    flex-direction: row;
+    display:inline-flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    
 }
 
 #form input {
@@ -136,8 +137,11 @@ a {
     background-color: white;
     padding: 20px;
     height: auto;
-    width: auto;
+    width: 50%;
     color:#848484;
+    text-align: center;
+    align-items: center;
+    
 }
 
 .footer {
