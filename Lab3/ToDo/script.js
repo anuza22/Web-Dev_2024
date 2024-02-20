@@ -23,7 +23,7 @@ list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
   }
-}, false);
+}, true);
 
 function newElement() {
   var li = document.createElement("li");
