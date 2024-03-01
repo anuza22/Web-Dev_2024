@@ -1,6 +1,6 @@
 export interface Product {
   id: number;
-  category: number;
+  category: string;
   name: string;
   price: number;
   description: string;
@@ -8,11 +8,13 @@ export interface Product {
   img: string;
   kaspi_link: string;
   like: number;
+  liked?: boolean;
+  disliked?: boolean;
 }
 
-export const products = [
+export const products: Product[] = [
   {
-    id: 1, category: 1,
+    id: 1, category: "smartphones",
     name: 'Смартфон Apple iPhone 13 128Gb Midnight черный',
     price: 298528,
     description: `
@@ -27,7 +29,7 @@ export const products = [
     like: 0
   },
   {
-    id: 2,category: 1,
+    id: 2,category: "smartphones",
     name: 'Смартфон Xiaomi Redmi 12 4G 8 ГБ/256 ГБ черный',
     price: 158000,
     description: `-технология NFC: Нет
@@ -40,7 +42,7 @@ export const products = [
     ,like: 0
   },
   {
-    id: 3,category: 1,
+    id: 3,category: "smartphones",
     name: 'Смартфон Apple iPhone 15 Pro Max 256Gb серый',
     price: 614666,
     description: `технология NFC: Да
@@ -53,7 +55,7 @@ export const products = [
     ,like: 0
   },
   {
-    id: 4,category: 1,
+    id: 4,category: "smartphones",
     name: 'Смартфон Apple iPhone 14 128Gb черный',
     price: 325969,
     description: `технология NFC: Да
@@ -66,7 +68,7 @@ export const products = [
     ,like: 0
   },
   {
-    id: 5,category: 1,
+    id: 5,category: "smartphones",
     name: 'Смартфон Samsung Galaxy A24 6 ГБ/128 ГБ черный',
     price: 89593,
     description: 'long battery life, bright display',
@@ -76,7 +78,7 @@ export const products = [
     ,like: 0
   },
   {
-    id: 6,category: 1,
+    id: 6,category: "smartphones",
     name: 'Смартфон Xiaomi Redmi 12C 4 ГБ/128 ГБ серый',
     price: 49290,
     description: `технология NFC: Нет
@@ -89,7 +91,7 @@ export const products = [
     ,like: 0
   },
   {
-    id: 7,category: 1,
+    id: 7,category: "smartphones",
     name: 'Смартфон Samsung Galaxy A54 5G 8 ГБ/256 ГБ черный',
     price: 163841,
     description: `технология NFC: Да
@@ -102,7 +104,7 @@ export const products = [
     like: 0
   },
   {
-    id: 8,category: 1,
+    id: 8,category: "smartphones",
     name: 'Смартфон Apple iPhone 13 128Gb зеленый',
     price: 287723,
     description: `технология NFC: Да
@@ -115,7 +117,7 @@ export const products = [
     ,like: 0
   },
   {
-    id: 9,category: 1,
+    id: 9,category: "smartphones",
     name: 'Смартфон Samsung Galaxy A54 5G 6 ГБ/128 ГБ черный',
     price: 142351,
     description: `технология NFC: Да
@@ -128,7 +130,7 @@ export const products = [
     ,like: 0
   },
   {
-    id: 10,category: 1,
+    id: 10,category: "smartphones",
     name: 'Смартфон Apple iPhone 11 128Gb Slim Box черный',
     price: 245170,
     description: `технология NFC: Да
@@ -142,7 +144,7 @@ export const products = [
   },
   {
     id: 11,
-    category: 1,
+    category: "smartphones",
     name: 'Phone XL',
     price: 799,
     description: 'A large phone with one of the best screens',
@@ -152,7 +154,7 @@ export const products = [
     ,like: 0
   },
   {
-    id: 12,category: 1,
+    id: 12,category: "smartphones",
     name: 'Phone Mini A52',
     price: 699,
     description: 'A great phone with one of the best cameras',
@@ -163,7 +165,7 @@ export const products = [
     ,like: 0
   },
   {
-    id: 13,category: 1,
+    id: 13,category: "smartphones",
     name: 'Phone Standard',
     price: 299,
     description: 'Apple iPhone 12 Pro Max',
@@ -173,7 +175,7 @@ export const products = [
     kaspi_link : "https://www.amazon.com/Apple-iPhone-12-Pro-Pacific/dp/B09JFNMBWL/ref=sr_1_1?crid=KHMHIKAWRF58&keywords=iphone+12+pro&qid=1647084805&sprefix=iphone+12+pr%2Caps%2C343&sr=8-1"
     ,like: 0},
   {
-    id: 14,category: 1,
+    id: 14,category: "smartphones",
     name: 'Samsung Galaxy S20',
     price: 700,
     description: 'FE 5G (128GB, 6GB) 6.5" AMOLED, Snapdragon 865, IP68 Water Resistant',
@@ -183,7 +185,7 @@ export const products = [
     kaspi_link : "https://www.amazon.com/Samsung-Factory-Unlocked-Smartphone-Pro-Grade/dp/B08FYTSXGQ/ref=sr_1_1?crid=2H7CEE2SM5PZQ&keywords=samsung+galaxy+s20&qid=1647085003&sprefix=samsung+galaxy+s22%2Caps%2C350&sr=8-1"
     ,like: 0},
   {
-    id: 15,category: 1,
+    id: 15,category: "smartphones",
     name: 'Samsung galaxy S22 ',
     price: 999,
     description: 'long battery life, bright display',
@@ -193,7 +195,7 @@ export const products = [
     kaspi_link : "https://www.amazon.com/Samsung-Snapdragon-Resistant-Unlocked-International/dp/B09PLNBG4H/ref=sr_1_5?crid=1UH9CU0G7W8H&keywords=samsung+galaxy+s22&qid=1647084971&sprefix=samsung+galaxy+s22%2Caps%2C362&sr=8-5"
     ,like: 0},
   {
-    id: 16,category: 1,
+    id: 16,category: "smartphones",
     name: 'Xiaomi 11T',
     price: 432,
     description: '108mp tripple camera, NFC dual sim',
@@ -203,7 +205,7 @@ export const products = [
     kaspi_link : "https://www.amazon.com/Xiaomi-11T-Compatible-Unlocked-Meteorite/dp/B09JX9HG77/ref=sr_1_1?crid=2U8K4BQZB0EWN&keywords=xiaomi+11t&qid=1647085028&sprefix=xiaomi+1%2Caps%2C283&sr=8-1"
     ,like: 0},
   {
-    id: 17,category: 1,
+    id: 17,category: "smartphones",
     name: 'Xiaomi redmi 9A',
     price: 299,
     description: '2Gb + 32 gb',
@@ -212,7 +214,7 @@ export const products = [
     kaspi_link : "https://www.amazon.com/Xiaomi-Display-Unlocked-Global-Version/dp/B08CGXVPXW/ref=sr_1_1?crid=G5H4WN31MXOQ&keywords=xiaomi+redmi+9a&qid=1647085051&sprefix=xiaomi+redmi+%2Caps%2C309&sr=8-1",
     like: 0},
   {
-    id: 18,category: 1,
+    id: 18,category: "smartphones",
     name: 'Phone Standard',
     price: 1000,
     description: 'Apple iPhone 12 Pro Max',
@@ -222,7 +224,7 @@ export const products = [
     kaspi_link : "https://www.amazon.com/Apple-iPhone-12-Pro-Pacific/dp/B09JFNMBWL/ref=sr_1_1?crid=KHMHIKAWRF58&keywords=iphone+12+pro&qid=1647084805&sprefix=iphone+12+pr%2Caps%2C343&sr=8-1"
     ,like: 0},
   {
-    id: 19,category: 1,
+    id: 19,category: "smartphones",
     name: 'One plus nord200',
     price: 800,
     description: '5G Enabled (5G service only available on T-Mobile and Google Fi)',
@@ -232,7 +234,7 @@ export const products = [
     kaspi_link : "https://www.amazon.com/OnePlus-Unlocked-Android-Smartphone-Charging/dp/B07XWGWPH5/ref=sr_1_1?crid=1P2VKRCR5ET7H&keywords=oneplus+nord+200&qid=1647085115&sprefix=oneplus+nord+20%2Caps%2C273&sr=8-1"
     ,like: 0},
   {
-    id: 20,category: 1,
+    id: 20,category: "smartphones",
     name: 'One plus nord100',
     price: 500,
     description: '120Hz Fluid Display, Hasselblad Triple Camera, 65W Ultra Fast Charge',
@@ -242,7 +244,7 @@ export const products = [
     kaspi_link : "https://www.amazon.com/OnePlus-Unlocked-Smartphone-Hasselblad-Wireless/dp/B08Y727NMK/ref=sr_1_2?crid=TODOI6APATYZ&keywords=oneplus&qid=1647084105&sprefix=one%2Caps%2C445&sr=8-2&th=1"
     ,like: 0},
   {
-    id: 21,category: 2,
+    id: 21,category: "laptops" ,
     name: 'HP flagship',
     price: 509,
     description: '120Hz Fluid Display, Hasselblad Triple Camera, 65W Ultra Fast Charge',
@@ -252,7 +254,7 @@ export const products = [
     kaspi_link : "https://www.amazon.com/Flagship-HP-15-6-Laptop-HubxcelCables/dp/B09S5MR596/ref=sr_1_1_sspa?crid=3SVCW2XHS9QXO&keywords=laptops&qid=1647173934&s=pc&sprefix=laptops%27%2Caps%2C527&sr=1-1-spons&psc=1&smid=A39LX1CZ9BSTRA&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyQTFCNDJOSVVRTkdKJmVuY3J5cHRlZElkPUEwODg4NTEzMzJNS1hNOUw0MDVENyZlbmNyeXB0ZWRBZElkPUEwNDkzMzExMlRIVlJaRVE4SElJMiZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU="
     ,like: 0},
   {
-    id: 22,category: 2,
+    id: 22,category: "laptops" ,
     name: 'HP newest',
     price: 489,
     description: '4-core Intel Pentium N5030(Up to 3.1GHz), 16GB RAM',
@@ -262,7 +264,7 @@ export const products = [
     kaspi_link : "https://www.amazon.com/HP-Micro-Edge-Pentium-Bluetooth-Accessories/dp/B09PFZL9XK/ref=sr_1_2_sspa?crid=3SVCW2XHS9QXO&keywords=laptops&qid=1647173934&s=pc&sprefix=laptops%27%2Caps%2C527&sr=1-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyQTFCNDJOSVVRTkdKJmVuY3J5cHRlZElkPUEwODg4NTEzMzJNS1hNOUw0MDVENyZlbmNyeXB0ZWRBZElkPUEwNzYxMjAzNURRWTBOVkFMMjhCJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ=="
     ,like: 0},
   {
-    id: 23,category: 2,
+    id: 23,category: "laptops" ,
     name: 'Acer Aspire 5',
     price: 399,
     description: ' Full HD IPS Display | AMD Ryzen 3 3350U Quad-Core Mobile Processor | 4GB DDR4',
@@ -272,7 +274,7 @@ export const products = [
     kaspi_link : "https://www.amazon.com/Acer-A515-46-R3UB-Display-Quad-Core-Processor/dp/B09HVC79PC/ref=sr_1_3?crid=3SVCW2XHS9QXO&keywords=laptops&qid=1647173934&s=pc&sprefix=laptops%27%2Caps%2C527&sr=1-3"
     ,like: 0},
   {
-    id: 24,category: 2,
+    id: 24,category: "laptops" ,
     name: 'HP pavilion',
     price: 799,
     description: '11th Gen Intel Core i7-1165G7 Processor, 16 GB RAM',
@@ -282,7 +284,7 @@ export const products = [
     kaspi_link : "https://www.amazon.com/HP-i7-1165G7-Processor-Micro-Edge-15-eg0025nr/dp/B09FX1YF28/ref=sr_1_4?crid=3SVCW2XHS9QXO&keywords=laptops&qid=1647173934&s=pc&sprefix=laptops%27%2Caps%2C527&sr=1-4"
     ,like: 0},
   {
-    id: 25,category: 2,
+    id: 25,category: "laptops" ,
     name: 'Lenovo ideapad 5',
     price: 549,
     description: 'Full HD - 1920 x 1080 - Intel Core i5 11th Gen i5-1135G7 Quad-core (4 Core) 2.40 GHz - 16 GB RAM - 512 GB SSD - Graphite Gray',
@@ -294,7 +296,7 @@ export const products = [
   {
     id: 26,
     name: "Roku Smart",
-    category: 3,
+    category: "TVs",
     price: 200,
     description: "TCL 32 inch",
     img:  "https://m.media-amazon.com/images/I/71wYJc19PiL._AC_UY218_.jpg",
@@ -304,7 +306,7 @@ export const products = [
     like: 0},
   {
     id: 27,
-    category: 3,
+    category: "TVs",
     name: "Smart Roku",
     price: 539,
     description: "TCL 65 inch",
@@ -315,7 +317,7 @@ export const products = [
     ,like: 0},
   {
     id: 28,
-    category: 3,
+    category: "TVs",
     name: "Sony x85j",
     price: 319,
     description: "Google TV with Native 120HZ Refresh Rate, Dolby Vision HDR",
@@ -326,7 +328,7 @@ export const products = [
     ,like: 0},
   {
     id: 29,
-    category: 3,
+    category: "TVs",
     name: "VIZIO 58inch",
     price: 485,
     description: "4K UHD LED HDR Smart TV with Apple AirPlay and Chromecast Built-in",
@@ -337,7 +339,7 @@ export const products = [
     ,like: 0},
   {
     id: 30,
-    category: 3,
+    category: "TVs",
     name: "Amazon Fire",
     price: 279,
     description: "TV 43 4-Series 4K UHD smart TV",
@@ -348,7 +350,7 @@ export const products = [
     ,like: 0},
   {
     id: 31,
-    category: 4,
+    category: "tablets",
     name: "Fire 7",
     price : 70,
     description: "tablet, 7 display, 16 GB, latest model (2019 release), Twilight Blue",
@@ -359,7 +361,7 @@ export const products = [
     ,like: 0},
   {
     id: 32,
-    category: 4,
+    category: "tablets",
     name: "Fire 10",
     price : 100,
     description: "kids pro tablet, blue",
@@ -370,7 +372,7 @@ export const products = [
     ,like: 0},
   {
     id: 33,
-    category: 4,
+    category: "tablets",
     name: "Fire 7",
     price : 50,
     description: "tablet, 7 display, 16 GB, latest model (2019 release), Black",
@@ -381,7 +383,7 @@ export const products = [
     ,like: 0 },
   {
     id: 34,
-    category: 4,
+    category: "tablets",
     name: "Moderness Tablet 10.1",
     price : 117,
     description: "10.1 Inch Android 10 32GB 6000mAh Battery Quad Core HD Touchscreen Tablets",
@@ -392,7 +394,7 @@ export const products = [
     ,like: 0 },
   {
     id: 35,
-    category: 4,
+    category: "tablets",
     name: "Samsung",
     price : 140,
     description: "Tab A7 Lite 8.7 Gray 32GB (SM-T220NZAAXAR)",
@@ -403,7 +405,7 @@ export const products = [
     ,like: 0},
   {
     id: 36,
-    category: 5,
+    category: "headphones",
     name: "Sonzy ZX",
     price: 14,
     description: "Wired on ear headphones, white",
@@ -414,7 +416,7 @@ export const products = [
     ,like: 0},
   {
     id: 37,
-    category: 5,
+    category: "headphones",
     name: "JBL vibe",
     price: 30,
     description: "100 TWS - True Wireless In-Ear Headphones - Purple",
@@ -425,7 +427,7 @@ export const products = [
     ,like: 0},
   {
     id: 38,
-    category: 5,
+    category: "headphones",
     name: "Shure AONIC 50 ",
     price: 60,
     description: "20 Hours Battery Life, Fingertip Controls - Black",
@@ -436,7 +438,7 @@ export const products = [
     ,like: 0},
   {
     id: 39,
-    category: 5,
+    category: "headphones",
     name: "Apple EarPods",
     price: 6,
     description: "Lightning Connector - White",
@@ -447,7 +449,7 @@ export const products = [
     ,like: 0},
   {
     id: 40,
-    category: 5,
+    category: "headphones",
     name: "Beats Solo3",
     price: 359,
     description: "Wireless On-Ear Headphones - Apple W1 Headphone Chip, Class 1 Bluetooth, 40 Hours of Listening Time, Built-in Microphone - Rose Gold",

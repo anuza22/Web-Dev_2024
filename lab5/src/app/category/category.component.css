@@ -1,0 +1,17 @@
+.categories-container{
+    background-color: orangered;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0 10px 0;
+}
+.categories-container__category{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.categories-container__category:hover{
+    color: #DBDBDB;
+    cursor: pointer;
+}
+.categories-container__category.active{
+    color: #000;
+}

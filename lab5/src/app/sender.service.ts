@@ -1,27 +1,29 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Product } from './products';
 import { products } from './products';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class SenderService {
 
-  prods = [] = products; 
+  private selectedCategorySubject = new Subject<number>();
+  selectedCategory$ = this.selectedCategorySubject.asObservable();
+
+  prods: Product[] = products;
   public ProdCategory: number = -1;
 
-  selectCateg(id: number){
-    let products = this.prods.filter(el=>el.category==id+1); 
-    console.log(products);
+  selectCateg(id: number) {
     this.ProdCategory = id;
+    this.selectedCategorySubject.next(id);
   }
 
-  getProds(){
+  getProds() {
     return this.prods;
   }
-  
-  constructor() { 
+
+  constructor() {
     this.ProdCategory = -1;
   }
 }

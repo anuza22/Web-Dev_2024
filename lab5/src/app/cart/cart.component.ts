@@ -15,8 +15,8 @@ export class CartComponent {
     address: ''
   });
   constructor(
-    private cartService: CartService,
-    private formBuilder: FormBuilder,
+      private cartService: CartService,
+      private formBuilder: FormBuilder,
   ) { }
   onSubmit(): void {
     this.items = this.cartService.clearCart();

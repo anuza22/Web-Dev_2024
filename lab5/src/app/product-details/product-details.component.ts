@@ -11,7 +11,7 @@ import { CartService } from '../cart.service';
 export class ProductDetailsComponent implements OnInit {
   product: Product | undefined;
   constructor(private route: ActivatedRoute,
-    private cartService: CartService) { }
+              private cartService: CartService) { }
 
   // ngOnInit(): void {
   //   const routeParams = this.route.snapshot.paramMap;
