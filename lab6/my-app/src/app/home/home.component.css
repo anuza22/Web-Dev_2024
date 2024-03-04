@@ -1,0 +1,45 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  background-color: #3498db;
+  color: #fff;
+  text-align: center;
+  padding: 50px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.fun-facts {
+  background-color: #f2f2f2;
+  padding: 50px;
+}
+
+.fact {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
