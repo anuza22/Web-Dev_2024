@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  margin: 20px 0;
+}
+
+.btn-category {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 170px;
+  font-size: 24px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-category:hover {
+  background-color: #3498db;
+}
+
+.loader {
+  position: fixed;
+  left: 40%;
+  top: 20%;
+}
+
+.btn-edit {
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.editing-container {
+  display: grid;
+  width: 550px;
+  gap: 10px;
+  border: 2px solid #3498db; /* Increased border thickness and adjusted color */
+  padding: 20px;
+  margin-left: 30%;
+  border-radius: 5px; /* Increased border radius */
+}
