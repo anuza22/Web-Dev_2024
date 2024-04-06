@@ -27,7 +27,7 @@ def product_detail(req, product_id):
         product = Product_model.objects.get(id=product_id)
     except Product_model.DoesNotExist as e:
         return JsonResponse({"message ": str(e)}, status=400)
-    return JsonResponse(product.to_json)
+    return JsonResponse(product.to_json(), safe=False)
 
 def list_category(req):
     categories = Category.objects.all()
@@ -39,13 +39,13 @@ def get_category(req, category_id):
         category = Category.objects.get(id=category_id)
     except Category.DoesNotExist as e:
         return JsonResponse({"message": str(e)}, status=400)
-    return JsonResponse(category.to_json())
+    return JsonResponse(category.to_json(), safe=False)
 
 def get_category_products(req, categ_id):
     try:
         products_json = []
         category = Category.objects.get(id=categ_id)
-        for prod in Product_model.objects.filter(category=int(categ_id)):
+        for prod in Product_model.objects.filter(category=category.name):
             obj = prod.to_json()
             products_json.append(obj) 
     except Category.DoesNotExist as e:
