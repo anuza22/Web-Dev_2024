@@ -3,8 +3,8 @@ from django.db import models
 class Company(models.Model):
     name = models.CharField(max_length=400)
     description = models.TextField()
-    city = models.CharField(max_length=400)
-    address = models.CharField(max_length=600)
+    city = models.CharField(max_length=1000)
+    address = models.CharField(max_length=1000)
 
     class Meta:
         verbose_name = 'Company'
@@ -16,17 +16,17 @@ class Company(models.Model):
     def to_json(self):
         return {
             'id': self.id,
-            'name': self.name
+            'name': self.name,
+            'description' : self.description,
+            'city' : self.city,
+            'address' : self.address
         }
     
 class Vacancy(models.Model):
-    name = models.CharField(max_length=400)
-    salary = models.FloatField()
+    name = models.CharField(max_length=300)
     description = models.TextField()
-    company = models.ForeignKey(Company,
-                                on_delete=models.CASCADE,
-                                related_name='company')
-
+    salary = models.FloatField()
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
     class Meta:
         verbose_name = 'Vacancy'
         verbose_name_plural = 'Vacancies'
@@ -36,10 +36,10 @@ class Vacancy(models.Model):
 
     def to_json(self):
         return {
-           'id' : self.id,
-            'name' : self.name,
-            'salary' : self.salary,
-            'description' : self.description,
-            'company': self.company  
+            'id': self.id,
+            'name': self.name,
+            'description': self.description,
+            'salary': self.salary,
+            'company_id': self.company_id
         }
 

@@ -1,6 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
 
 import imp
 from api.models import Vacancy
