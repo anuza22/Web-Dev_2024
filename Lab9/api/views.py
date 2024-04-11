@@ -79,13 +79,14 @@ def vacancy_detail(request, vacancy_id=None):
         return JsonResponse({'deleted': True})
     
 
-def companies_vacancies(request, pk=None):
+def companies_vacancies(request, company_id=None):
     try:
-        company = Company.objects.get(id=pk)
+        company = Company.objects.get(id=company_id)
     except Company.DoesNotExist as exception:
         return JsonResponse({'exception': str(exception)}, status=400)
     
-    vacancies_json = [v.to_json() for v in company.vacancies.all()]
+    vacancies = Vacancy.objects.filter(company_id=company_id)
+    vacancies_json = [v.to_json() for v in vacancies]
     return JsonResponse(vacancies_json, safe=False)
 
 def vacancies_top(request):
